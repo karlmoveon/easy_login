@@ -1,10 +1,10 @@
-package httpServer
+package main
 
 import (
-	"entry_task/rpc"
-	"entry_task/common"
+	"go_task/rpc"
+	"go_task/common"
 	"fmt"
-	"entry_task/util"
+	"go_task/util"
 )
 
 func login(username, password string) (string, int) {

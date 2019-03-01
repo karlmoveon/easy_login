@@ -1,7 +1,7 @@
 package db
 
 import (
-	"entry_task/common"
+	"go_task/common"
 	"github.com/garyburd/redigo/redis"
 	"time"
 )

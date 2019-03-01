@@ -1,8 +1,8 @@
-package tcpServer
+package main
 
 import (
-	"entry_task/common"
-	"entry_task/db"
+	"go_task/common"
+	"go_task/db"
 	"fmt"
 	"github.com/garyburd/redigo/redis"
 	"log"

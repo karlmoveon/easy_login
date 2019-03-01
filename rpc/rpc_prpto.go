@@ -3,7 +3,7 @@ package rpc
 import (
 	"encoding/binary"
 	"encoding/json"
-	"entry_task/common"
+	"go_task/common"
 	"fmt"
 	"io"
 	"net"
@@ -11,7 +11,7 @@ import (
 )
 
 func Call(req common.RpcReq) (common.RpcResp, int){
-	reqBytes, length := encodeReq(req)
+	reqBytes, length := EncodeReq(req)
 
 	var resp common.RpcResp
 
@@ -48,7 +48,7 @@ func Call(req common.RpcReq) (common.RpcResp, int){
 		return resp, common.TcpServerError
 	}
 
-	resp = decodeResp(respBuf)
+	resp = DecodeResp(respBuf)
 	return resp, common.Success
 }
 

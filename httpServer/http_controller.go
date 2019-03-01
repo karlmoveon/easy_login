@@ -1,10 +1,8 @@
-package httpServer
+package main
 
 import (
 	"crypto/md5"
-	"entry_task/adapter"
-	"entry_task/common"
-	"entry_task/rpc"
+	"go_task/common"
 	"fmt"
 	"html/template"
 	"io"
@@ -43,7 +41,7 @@ func encryptPwd(originPwd string) string {
 
 func loginHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodGet {
-		t, _ := template.ParseFiles(LoginHtml)
+		t, _ := template.ParseFiles(common.LoginHtml)
 		t.Execute(w, nil)
 	} else {
 		username := r.FormValue("username")
@@ -127,7 +125,7 @@ func uploadPicHandler(w http.ResponseWriter, r *http.Request) {
 	http.Redirect(w, r, "/userinfo", http.StatusFound)
 }
 
-func renderTemplate(w http.ResponseWriter, tmpl string, p *Profile) {
+func renderTemplate(w http.ResponseWriter, tmpl string, p *profile) {
 	fmt.Println("render html:", tmpl)
 	err := templates.ExecuteTemplate(w, tmpl, p)
 	if err != nil {

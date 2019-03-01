@@ -2,7 +2,7 @@ package db
 
 import (
 	"database/sql"
-	"entry_task/common"
+	"go_task/common"
 	"fmt"
 )
 

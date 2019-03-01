@@ -1,10 +1,10 @@
-package tcpServer
+package main
 
 import (
 	"encoding/binary"
-	"entry_task/common"
-	"entry_task/db"
-	"entry_task/rpc"
+	"go_task/common"
+	"go_task/db"
+	"go_task/rpc"
 	"fmt"
 	"io"
 	"net"
@@ -102,7 +102,5 @@ func main() {
 		common.HandleError(err)
 		go serveTcp(conn)
 	}
-
-
 }
 
