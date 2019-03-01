@@ -1,0 +1,43 @@
+<html>
+<head>
+        <style type="text/css">
+            h1{
+                font-size:30px;
+                color:#930;
+                text-align:center;
+            }
+        </style>
+</head>
+
+<body>
+<h1>个人信息</h1>
+
+    <img src="{{.Picture}}" class="round_icon" alt=" " width="100px" height="100px"/>
+    <br>
+
+    <p>username: {{.Username}}</p>
+    <p>nickname: {{.Nickname}}</p>
+
+    <br>
+    <form method="post" action="editnickname">
+        <input type="hidden" name="username" value="{{.Username}}"></input>
+        <br>
+        Change nickname:<br>
+        <input type="text" name="nickname_submit" placeholder="please input nickname you want to change"></input>
+        <br>
+
+        <td><input type="submit" value="更改" style="width:70px"></input></td>
+    </form>
+
+    <form method="post" action="uploadpic">
+        <input type="hidden" name="username" value="{{.Username}}"></input>
+        <br>
+        Upload picture:<br>
+        <input type="text" name="picture_submit" placeholder="please input picture url"></input>
+        <br>
+        <td><input type="submit" value="上传" style="width:70px"></input></td>
+    </form>
+
+</body>
+
+</html>
